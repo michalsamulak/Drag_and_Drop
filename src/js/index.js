@@ -42,3 +42,19 @@ const walls = [
     Bodies.rectangle(800, 300, 40, 600, {isStatic: true}),
 ];
 
+
+
+World.add(world, walls);
+
+// Random shapes
+for(let i=0; i < 100; i++) {
+    if(Math.random() > 0.8) {
+    World.add(world, Bodies.rectangle(Math.random() * width,Math.random() * height, 50, 50)); 
+    } else if (Math.random() > 0.6 && Math.random() <= 0.8) {
+        World.add(world, Bodies.circle(Math.random() * width,Math.random() * height, 35)); 
+    } else if (Math.random() > 0.3 && Math.random() <= 0.6) {
+        World.add(world, Bodies.trapezoid(Math.random() * width,Math.random() * height, 50, 50, 3)); 
+    } else {
+        World.add(world, Bodies.polygon(Math.random() * width,Math.random() * height, 50, 25)); 
+    }
+}
