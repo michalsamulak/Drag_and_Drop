@@ -10,8 +10,9 @@ import '../scss/main.scss';
 
 const { Engine, Render, Runner, World, Bodies, MouseConstraint, Mouse } = Matter;
 
-const width = 800;
-const height = 600;
+const width = window.innerWidth*0.8;
+const height = window.innerHeight*0.8;
+
 
 const engine = Engine.create();
 const { world } = engine;
@@ -36,10 +37,14 @@ World.add(world, MouseConstraint.create(engine, {
 //Walls
 
 const walls = [
-    Bodies.rectangle(400, 0, 800, 40, {isStatic: true}),
-    Bodies.rectangle(400, 600, 800, 40, {isStatic: true}),
-    Bodies.rectangle(0, 300, 40, 600, {isStatic: true}),
-    Bodies.rectangle(800, 300, 40, 600, {isStatic: true}),
+    // up
+    Bodies.rectangle(width/2, 0, width, 40, {isStatic: true}),
+    // down
+    Bodies.rectangle(width/2, height, width, 40, {isStatic: true}),
+    // left
+    Bodies.rectangle(0, height/2, 40, height, {isStatic: true}),
+    //right
+    Bodies.rectangle(width, height/2, 40, height, {isStatic: true}),
 ];
 
 
