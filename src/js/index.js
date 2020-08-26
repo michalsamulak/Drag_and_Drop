@@ -54,12 +54,12 @@ World.add(world, walls);
 // Random shapes
 for(let i=0; i < 100; i++) {
     if(Math.random() > 0.8) {
-    World.add(world, Bodies.rectangle(Math.random() * width,Math.random() * height, 50, 50)); 
+    World.add(world, Bodies.rectangle(Math.random() * width,Math.random() * height, width*.05, width*.05)); 
     } else if (Math.random() > 0.6 && Math.random() <= 0.8) {
-        World.add(world, Bodies.circle(Math.random() * width,Math.random() * height, 35)); 
+        World.add(world, Bodies.circle(Math.random() * width,Math.random() * height, width*.02)); 
     } else if (Math.random() > 0.3 && Math.random() <= 0.6) {
-        World.add(world, Bodies.trapezoid(Math.random() * width,Math.random() * height, 50, 50, 3)); 
+        World.add(world, Bodies.trapezoid(Math.random() * width,Math.random() * height, width*.05, width*.05, width*.003)); 
     } else {
-        World.add(world, Bodies.polygon(Math.random() * width,Math.random() * height, 50, 25)); 
+        World.add(world, Bodies.polygon(Math.random() * width,Math.random() * height, width*.05, width*.01)); 
     }
 }
